@@ -1,0 +1,7 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/Content/burger.png","/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/Content/bin/DesktopGL/burger.xnb","TextureProcessor","Texture2DContent",974861,3672085,0.979637
+"/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/Content/carl.JPG","/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/Content/bin/DesktopGL/carl.xnb","TextureProcessor","Texture2DContent",275959,6170341,0.077948
+"/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/Content/dumbbell.png","/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/Content/bin/DesktopGL/dumbbell.xnb","TextureProcessor","Texture2DContent",807233,5300685,0.067228
+"/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/Content/fork.png","/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/Content/bin/DesktopGL/fork.xnb","TextureProcessor","Texture2DContent",7377,208885,0.004281
+"/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/Content/gameover.png","/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/Content/bin/DesktopGL/gameover.xnb","TextureProcessor","Texture2DContent",1341842,5898325,0.104379
+"/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/Content/mcd-store.png","/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/Content/bin/DesktopGL/mcd-store.xnb","TextureProcessor","Texture2DContent",213859,2253685,0.032801
