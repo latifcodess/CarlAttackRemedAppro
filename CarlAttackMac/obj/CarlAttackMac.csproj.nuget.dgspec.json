@@ -1,25 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/CarlAttackMac.csproj": {}
+    "C:\\Users\\pl84wyk\\Documents\\Github\\CarlAttackMac\\CarlAttackMac\\CarlAttackMac.csproj": {}
   },
   "projects": {
-    "/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/CarlAttackMac.csproj": {
+    "C:\\Users\\pl84wyk\\Documents\\Github\\CarlAttackMac\\CarlAttackMac\\CarlAttackMac.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/CarlAttackMac.csproj",
+        "projectUniqueName": "C:\\Users\\pl84wyk\\Documents\\Github\\CarlAttackMac\\CarlAttackMac\\CarlAttackMac.csproj",
         "projectName": "CarlAttackMac",
-        "projectPath": "/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/CarlAttackMac.csproj",
-        "packagesPath": "/Users/latifkrasniqi/.nuget/packages/",
-        "outputPath": "/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/obj/",
+        "projectPath": "C:\\Users\\pl84wyk\\Documents\\Github\\CarlAttackMac\\CarlAttackMac\\CarlAttackMac.csproj",
+        "packagesPath": "C:\\Users\\pl84wyk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pl84wyk\\Documents\\Github\\CarlAttackMac\\CarlAttackMac\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/latifkrasniqi/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\pl84wyk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -69,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

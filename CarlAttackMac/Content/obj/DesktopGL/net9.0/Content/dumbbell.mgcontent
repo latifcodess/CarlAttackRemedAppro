@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/Content/dumbbell.png</SourceFile>
-  <SourceTime>2025-11-04T23:06:53.0392617+01:00</SourceTime>
-  <DestFile>/Users/latifkrasniqi/Documents/dev/CarlAttackMac/CarlAttackMac/Content/bin/DesktopGL/Content/dumbbell.xnb</DestFile>
-  <DestTime>2025-11-04T23:18:38.2735824+01:00</DestTime>
+  <SourceFile>C:/Users/pl84wyk/Documents/Github/CarlAttackMac/CarlAttackMac/Content/dumbbell.png</SourceFile>
+  <SourceTime>2026-01-16T10:02:55.5705337+01:00</SourceTime>
+  <DestFile>C:/Users/pl84wyk/Documents/Github/CarlAttackMac/CarlAttackMac/Content/bin/DesktopGL/Content/dumbbell.xnb</DestFile>
+  <DestTime>2026-01-16T10:06:57.0082399+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-10-20T16:25:32+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
