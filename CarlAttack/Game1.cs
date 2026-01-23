@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace CarlAttack;
 
-    public class CarlAttack : Game
+    public class CarlAttackGame : Game
     {
         enum GameState {Playing, GameOver }
         GameState State = GameState.Playing;
@@ -28,7 +28,7 @@ namespace CarlAttack;
         int score = 0;
         SpriteFont font;
 
-        public Game1()
+        public CarlAttackGame()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";

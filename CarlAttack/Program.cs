@@ -1,2 +1,4 @@
-﻿using var game = new CarlAttack();
+﻿using CarlAttack;
+
+using var game = new CarlAttackGame();
 game.Run();
