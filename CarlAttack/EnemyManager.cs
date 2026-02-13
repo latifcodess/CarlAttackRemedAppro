@@ -33,6 +33,14 @@ namespace CarlAttack
         /// </summary>
         private float _spawnInterval = 0.5f;
 
+        private Boss _boss;
+        private bool _bossSpawned = false;
+        private int _kills = 0;
+
+        public Boss Boss => _boss;
+        public int Kills => _kills;
+
+
         /// <summary>
         /// Getter de _enemies
         /// </summary>
@@ -45,7 +53,7 @@ namespace CarlAttack
         /// Constructeur
         /// </summary>
         /// <param name="texture">Texture de l'ennemi</param>
-        public EnemyManager(Texture2D texture) 
+        public EnemyManager(Texture2D texture)
         {
             _enemyTex = texture;
         }
@@ -63,24 +71,30 @@ namespace CarlAttack
             _spawnTimer += time;
 
             // si le timer est plus grand que l'interval : on fait un spawn un ennemi et on met le timer à 0
-            if (_spawnTimer >= _spawnInterval)
+            if (_spawnTimer >= _spawnInterval && !_bossSpawned)
             {
                 SpawnEnemy();
                 _spawnTimer = 0f;
             }
 
             // parcourir la liste _enemies a l'envers
-            for (int i = _enemies.Count - 1; i>= 0; i--)
+            for (int i = _enemies.Count - 1; i >= 0; i--)
             {
                 // mettre à jour les ennemis
                 _enemies[i].Update(gameTime);
 
                 // si l'ennemi sort de l'ecran on le supprime
-                if(_enemies[i].Pos.Y > 1000)
+                if (_enemies[i].Pos.Y > 1000)
                 {
                     _enemies.RemoveAt(i);
                 }
             }
+
+            if (_boss != null)
+            {
+                _boss.Update(gameTime);
+            }
+
         }
 
         /// <summary>
@@ -101,6 +115,25 @@ namespace CarlAttack
             _enemies.Add(new Enemy(tex: _enemyTex, pos: startPos, speed: speed));
         }
 
+        public void AddKill()
+        {
+            _kills++;
+
+            if (_kills == 20 && !_bossSpawned)
+            {
+                SpawnBoss();
+            }
+        }
+
+        private void SpawnBoss()
+        {
+            _bossSpawned = true;
+
+            Vector2 bossPos = new Vector2(800, -200);
+            _boss = new Boss(_enemyTex, bossPos);
+        }
+
+
         /// <summary>
         /// Affichage des ennemis
         /// </summary>
@@ -112,6 +145,12 @@ namespace CarlAttack
             {
                 enemy.Draw(spriteBatch);
             }
+            
+            if (_boss != null)
+            {
+                _boss.Draw(spriteBatch);
+            }
+
         }
     }
 }

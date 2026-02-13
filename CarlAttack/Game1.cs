@@ -178,6 +178,7 @@ namespace CarlAttack;
 
                         // incrementation du score
                         score += 1;
+                        enemyManager.AddKill();
                     }
                 }
             }
