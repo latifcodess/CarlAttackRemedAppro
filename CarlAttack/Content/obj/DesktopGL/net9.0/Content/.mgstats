@@ -1,4 +1,5 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/pl84wyk/Documents/Github/CarlAttackRemedAppro/CarlAttack/Content/boss.png","C:/Users/pl84wyk/Documents/Github/CarlAttackRemedAppro/CarlAttack/Content/bin/DesktopGL/Content/boss.xnb","TextureProcessor","Texture2DContent",219316,997745,0.1178842
 "C:/Users/pl84wyk/Documents/Github/CarlAttackRemedAppro/CarlAttack/Content/burger.png","C:/Users/pl84wyk/Documents/Github/CarlAttackRemedAppro/CarlAttack/Content/bin/DesktopGL/Content/burger.xnb","TextureProcessor","Texture2DContent",974861,3672085,0.1924336
 "C:/Users/pl84wyk/Documents/Github/CarlAttackRemedAppro/CarlAttack/Content/carl.JPG","C:/Users/pl84wyk/Documents/Github/CarlAttackRemedAppro/CarlAttack/Content/bin/DesktopGL/Content/carl.xnb","TextureProcessor","Texture2DContent",275959,6170341,0.1508552
 "C:/Users/pl84wyk/Documents/Github/CarlAttackRemedAppro/CarlAttack/Content/dumbbell.png","C:/Users/pl84wyk/Documents/Github/CarlAttackRemedAppro/CarlAttack/Content/bin/DesktopGL/Content/dumbbell.xnb","TextureProcessor","Texture2DContent",807233,5300685,0.1256129

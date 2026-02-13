@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.IO.Compression;
 
 namespace CarlAttack
 {
@@ -12,11 +13,13 @@ namespace CarlAttack
         /// Liste des ennemis
         /// </summary>
         private List<Enemy> _enemies = new List<Enemy>();
-
+        private GraphicsDeviceManager _graphics;
+        
         /// <summary>
         /// Texture des ennemis
         /// </summary>
         private Texture2D _enemyTex;
+        private Texture2D _bossTex;
 
         /// <summary>
         /// Instance aléatoire
@@ -36,6 +39,7 @@ namespace CarlAttack
         private Boss _boss;
         private bool _bossSpawned = false;
         private int _kills = 0;
+        private Vector2 _bossPos;
 
         public Boss Boss => _boss;
         public int Kills => _kills;
@@ -53,9 +57,11 @@ namespace CarlAttack
         /// Constructeur
         /// </summary>
         /// <param name="texture">Texture de l'ennemi</param>
-        public EnemyManager(Texture2D texture)
+        public EnemyManager(Texture2D texture, Texture2D boss, Vector2 BossPos)
         {
             _enemyTex = texture;
+            _bossTex = boss;
+            _bossPos = BossPos;
         }
 
         /// <summary>
@@ -127,10 +133,9 @@ namespace CarlAttack
 
         private void SpawnBoss()
         {
-            _bossSpawned = true;
 
-            Vector2 bossPos = new Vector2(800, -200);
-            _boss = new Boss(_enemyTex, bossPos);
+            _bossSpawned = true;
+            _boss = new Boss(_bossTex, _bossPos);
         }
 
 

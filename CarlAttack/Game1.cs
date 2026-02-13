@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.IO.Compression;
 
 namespace CarlAttack;
 
@@ -25,6 +26,7 @@ namespace CarlAttack;
         Texture2D gameOverTex;
         ObstacleManager obstacleManager;
         Texture2D obstacleTex;
+        Texture2D bossTex;
         int score = 0;
         SpriteFont font;
 
@@ -58,12 +60,13 @@ namespace CarlAttack;
             enemyTex = Content.Load<Texture2D>("burger");
             gameOverTex = Content.Load<Texture2D>("gameover");
             obstacleTex = Content.Load<Texture2D>("dumbbell");
+            bossTex = Content.Load<Texture2D>("boss");
 
             // instance du joueur
             carl = new Player(texture: playerTex, startPos: new Vector2((_graphics.PreferredBackBufferWidth - (playerTex.Width * 0.2f)) / 2, 700));
 
             // instance de la logique des ennemis
-            enemyManager = new EnemyManager(texture: enemyTex);
+            enemyManager = new EnemyManager(texture: enemyTex, boss: bossTex, BossPos: new Vector2((_graphics.PreferredBackBufferWidth - (bossTex.Width * 1.2f)) / 2, -200));
 
             // instance de la logique des projectiles
             bulletManager = new BulletManager(Tex: bulletTex);
