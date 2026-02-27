@@ -65,7 +65,9 @@ namespace CarlAttack
         /// <summary>
         /// Constructeur
         /// </summary>
-        /// <param name="texture">Texture de l'ennemi</param>
+        /// <param name="texture">Texture des ennemis</param>
+        /// <param name="boss">Texture du boss</param>
+        /// <param name="BossPos">Position du boss</param>
         public EnemyManager(Texture2D texture, Texture2D boss, Vector2 BossPos)
         {
             _enemyTex = texture;
@@ -85,7 +87,8 @@ namespace CarlAttack
             // Incremente le temp passer depuis le dernier spawn d'ennemi
             _spawnTimer += time;
 
-            // si le timer est plus grand que l'interval : on fait un spawn un ennemi et on met le timer à 0
+            // si le timer est plus grand que l'interval et que le boss n'est pas spawn
+            // : on fait un spawn un ennemi et on met le timer à 0
             if (_spawnTimer >= _spawnInterval && !_bossSpawned)
             {
                 SpawnEnemy();
@@ -105,12 +108,16 @@ namespace CarlAttack
                 }
             }
 
+            // si le boss existe
             if (_boss != null)
             {
+                // on appelle sa methode update (voir Boss.cs)
                 _boss.Update(gameTime);
 
+                // si le boss meurt
                 if (_boss.isDead)
                 {
+                    // boss devient null
                     _boss = null;
                 }
             }
@@ -137,18 +144,23 @@ namespace CarlAttack
 
         public void AddKill()
         {
+            // incremente le nombre de kill
             _kills++;
 
+            // si le nombre de kills est égal à 20 et que le boss n'est pas spawn
             if (_kills == 20 && !_bossSpawned)
             {
+                // faire spawn le boss
                 SpawnBoss();
             }
         }
 
         private void SpawnBoss()
         {
-
+            // mettre l'état du spawn du boss à true
             _bossSpawned = true;
+
+            // instance de l'objet _boss
             _boss = new Boss(_bossTex, _bossPos);
         }
 
@@ -165,8 +177,10 @@ namespace CarlAttack
                 enemy.Draw(spriteBatch);
             }
             
+            // si l'objet n'est pas null
             if (_boss != null)
             {
+                // boss est affiché à l'ecran
                 _boss.Draw(spriteBatch);
             }
 
