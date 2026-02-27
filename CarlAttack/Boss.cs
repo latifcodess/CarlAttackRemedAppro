@@ -4,51 +4,69 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
+using System.Runtime.InteropServices;
 
 namespace CarlAttack
 {
     public class Boss
     {
-        public Vector2 Pos;
+        public bool isDead = false;
+        private Vector2 _pos;
         private Texture2D _tex;
         private float _speed = 50f;
         private int _health = 50;
 
+        public Texture2D Tex
+        {
+            get { return _tex; }
+        }
+
+        public Vector2 Pos
+        {
+            get { return _pos; }
+            set { _pos = value; }
+        }
+
         public Boss(Texture2D tex, Vector2 pos)
         {
             _tex = tex;
-            Pos = pos;
+            _pos = pos;
         }
 
         public void Update(GameTime gameTime)
         {
             float time = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            if (Pos.Y < -50)
-                Pos.Y += _speed * time;
+            if (_pos.Y < -50)
+                _pos.Y += _speed * time;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(
                 _tex,
-                Pos, 
-                null, 
+                _pos,
+                null,
                 Color.White,
                 0f,
-                Vector2.Zero, 
-                scale: 1.2f, 
-                SpriteEffects.None, 
+                Vector2.Zero,
+                scale: 1.2f,
+                SpriteEffects.None,
                 0f);
         }
 
         public void TakeDamage()
         {
-            _health--;
+            if (isDead)
+            {
+                return;
+            }
+
+            _health -= 5;
 
             if (_health <= 0)
             {
-                // boss mort (à gérer plus tard)
+                isDead = true;
             }
         }
     }

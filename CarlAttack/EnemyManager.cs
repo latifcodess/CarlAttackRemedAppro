@@ -41,8 +41,17 @@ namespace CarlAttack
         private int _kills = 0;
         private Vector2 _bossPos;
 
-        public Boss Boss => _boss;
-        public int Kills => _kills;
+        public Boss boss
+        {
+            get { return _boss; }
+            set { _boss = value; }
+        }
+
+        public int Kills
+        {
+            get { return _kills; }
+            set { _kills = value; }
+        }
 
 
         /// <summary>
@@ -99,6 +108,11 @@ namespace CarlAttack
             if (_boss != null)
             {
                 _boss.Update(gameTime);
+
+                if (_boss.isDead)
+                {
+                    _boss = null;
+                }
             }
 
         }
