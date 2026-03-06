@@ -28,7 +28,6 @@ public class CarlAttackGame : Game
     Texture2D obstacleTex;
     Texture2D bossTex;
     int score = 0;
-    SpriteFont font;
 
     public CarlAttackGame()
     {
@@ -66,7 +65,7 @@ public class CarlAttackGame : Game
         carl = new Player(texture: playerTex, startPos: new Vector2((_graphics.PreferredBackBufferWidth - (playerTex.Width * 0.2f)) / 2, 700));
 
         // instance de la logique des ennemis
-        enemyManager = new EnemyManager(texture: enemyTex, boss: bossTex, BossPos: new Vector2((_graphics.PreferredBackBufferWidth - (bossTex.Width * 1.2f)) / 2, -200));
+        enemyManager = new EnemyManager(texture: enemyTex, boss: bossTex, BossPos: new Vector2((_graphics.PreferredBackBufferWidth - (bossTex.Width * 1.2f)) / 2, -700));
 
         // instance de la logique des projectiles
         bulletManager = new BulletManager(Tex: bulletTex);
@@ -112,7 +111,7 @@ public class CarlAttackGame : Game
         if (keyboard.IsKeyDown(Keys.B) && shootTimer >= shootInterval)
         {
             Vector2 spawnPos = carl.pos;
-            float distance = 400f;
+            float distance = 250;
 
             spawnPos.Y -= distance;
 
@@ -131,6 +130,18 @@ public class CarlAttackGame : Game
             (int)(carl.tex.Width * 0.2f),
             (int)(carl.tex.Height * 0.2f)
         );
+
+        Rectangle bossRect = Rectangle.Empty;
+
+        if (enemyManager.boss != null)
+        {
+            bossRect = new Rectangle(
+                (int)enemyManager.boss.Pos.X,
+                (int)enemyManager.boss.Pos.Y,
+                (int)(enemyManager.boss.Tex.Width * 1.2f),
+                (int)(enemyManager.boss.Tex.Height * 1.2f)
+            );
+        }
 
         // instance d'un rectangle pour chaques ennemis
         foreach (Enemy enemy in enemyManager.Enemies)
@@ -240,6 +251,26 @@ public class CarlAttackGame : Game
 
                 // Si un projectile rentre en collision avec un obstacle : il disparrait
                 if (obstacleRect.Intersects(bulletRect))
+                {
+                    bulletManager.Bullets.Remove(bullet);
+                }
+            }
+        }
+
+        for (int i = bulletManager.Bullets.Count - 1; i >= 0; i--)
+        {
+            Bullet bullet = bulletManager.Bullets[i];
+
+            Rectangle bulletRect = new Rectangle(
+                (int)bullet.Pos.X,
+                (int)bullet.Pos.Y,
+                (int)(bullet.Tex.Width * 1),
+                (int)(bullet.Tex.Height * 1)
+                );
+
+            if (enemyManager.boss != null)
+            {
+                if (bossRect.Intersects(bulletRect))
                 {
                     bulletManager.Bullets.Remove(bullet);
                 }

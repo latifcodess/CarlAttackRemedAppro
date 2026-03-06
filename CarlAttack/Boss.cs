@@ -33,7 +33,13 @@ namespace CarlAttack
         /// <summary>
         /// Vie
         /// </summary>
-        private int _health = 50;
+        private int _health = 500;
+
+        public int Health
+        {
+            get { return _health; }
+            set { _health = value; }
+        }
 
         /// <summary>
         /// Getter de _tex

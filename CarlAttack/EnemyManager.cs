@@ -124,6 +124,11 @@ namespace CarlAttack
 
         }
 
+        public void TakeDamage()
+        {
+            _boss.Health -= 10;
+        }
+
         /// <summary>
         /// Logique de l'apparition des ennemis
         /// </summary>
