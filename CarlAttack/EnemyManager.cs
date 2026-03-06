@@ -13,7 +13,6 @@ namespace CarlAttack
         /// Liste des ennemis
         /// </summary>
         private List<Enemy> _enemies = new List<Enemy>();
-        private GraphicsDeviceManager _graphics;
         
         /// <summary>
         /// Texture des ennemis
@@ -123,7 +122,7 @@ namespace CarlAttack
             }
 
         }
-        
+
         /// <summary>
         /// Logique de l'apparition des ennemis
         /// </summary>
@@ -148,7 +147,7 @@ namespace CarlAttack
             _kills++;
 
             // si le nombre de kills est égal à 20 et que le boss n'est pas spawn
-            if (_kills == 20 && !_bossSpawned)
+            if (_kills == 50 && !_bossSpawned)
             {
                 // faire spawn le boss
                 SpawnBoss();

@@ -28,6 +28,7 @@ public class CarlAttackGame : Game
     Texture2D obstacleTex;
     Texture2D bossTex;
     Texture2D pixel;
+    SpriteFont scoreFont;
     int score = 0;
 
     public CarlAttackGame()
@@ -61,6 +62,7 @@ public class CarlAttackGame : Game
         gameOverTex = Content.Load<Texture2D>("gameover");
         obstacleTex = Content.Load<Texture2D>("dumbbell");
         bossTex = Content.Load<Texture2D>("boss");
+        scoreFont = Content.Load<SpriteFont>("scoreFont");
 
         pixel = new Texture2D(GraphicsDevice, 1, 1);
         pixel.SetData(new[] { Color.White });
@@ -296,6 +298,12 @@ public class CarlAttackGame : Game
         _spriteBatch.Draw(texture: bgTex,
                     destinationRectangle: new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height),
                     color: Color.White);
+
+        _spriteBatch.DrawString(
+                    scoreFont,
+                    "Kills: " + score,
+                    new Vector2(20, 20),
+                    Color.White);
 
         // image du joueur
         carl.Draw(spriteBatch: _spriteBatch);
