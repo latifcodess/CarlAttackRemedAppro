@@ -27,6 +27,7 @@ public class CarlAttackGame : Game
     ObstacleManager obstacleManager;
     Texture2D obstacleTex;
     Texture2D bossTex;
+    Texture2D pixel;
     int score = 0;
 
     public CarlAttackGame()
@@ -61,11 +62,14 @@ public class CarlAttackGame : Game
         obstacleTex = Content.Load<Texture2D>("dumbbell");
         bossTex = Content.Load<Texture2D>("boss");
 
+        pixel = new Texture2D(GraphicsDevice, 1, 1);
+        pixel.SetData(new[] { Color.White });
+
         // instance du joueur
         carl = new Player(texture: playerTex, startPos: new Vector2((_graphics.PreferredBackBufferWidth - (playerTex.Width * 0.2f)) / 2, 700));
 
         // instance de la logique des ennemis
-        enemyManager = new EnemyManager(texture: enemyTex, boss: bossTex, BossPos: new Vector2((_graphics.PreferredBackBufferWidth - (bossTex.Width * 1.2f)) / 2, -700));
+        enemyManager = new EnemyManager(texture: enemyTex, boss: bossTex, BossPos: new Vector2((_graphics.PreferredBackBufferWidth - (bossTex.Width * 1.2f)) / 2, -500));
 
         // instance de la logique des projectiles
         bulletManager = new BulletManager(Tex: bulletTex);
@@ -273,6 +277,7 @@ public class CarlAttackGame : Game
                 if (bossRect.Intersects(bulletRect))
                 {
                     bulletManager.Bullets.Remove(bullet);
+                    enemyManager.boss.TakeDamage();
                 }
             }
         }
@@ -297,6 +302,26 @@ public class CarlAttackGame : Game
 
         // image des ennemis
         enemyManager.Draw(spriteBatch: _spriteBatch);
+
+        if (enemyManager.boss != null)
+        {
+            float healthPercent = (float)enemyManager.boss.Health / enemyManager.boss.MaxHealth;
+
+            int barWidth = 600;
+            int barHeight = 30;
+
+            int currentWidth = (int)(barWidth * healthPercent);
+
+            // fond rouge
+            _spriteBatch.Draw(pixel,
+                new Rectangle(660, 10, barWidth, barHeight),
+                Color.DarkRed);
+
+            // vie actuelle
+            _spriteBatch.Draw(pixel,
+                new Rectangle(660, 10, currentWidth, barHeight),
+                Color.LimeGreen);
+        }
 
         // image des projectiles
         bulletManager.Draw(spriteBatch: _spriteBatch);

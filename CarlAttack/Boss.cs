@@ -33,12 +33,18 @@ namespace CarlAttack
         /// <summary>
         /// Vie
         /// </summary>
-        private int _health = 500;
+        private int _health = 400;
+        private int _maxHealth = 400;
 
         public int Health
         {
             get { return _health; }
             set { _health = value; }
+        }
+
+        public int MaxHealth
+        {
+            get { return _maxHealth; }
         }
 
         /// <summary>
@@ -74,8 +80,8 @@ namespace CarlAttack
             float time = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             // deplacement progressive jusqu'a sa position finale
-            if (_pos.Y < -50)
-                _pos.Y += _speed * time;
+            if (_pos.Y < -33)
+                _pos.Y += _speed * (time * 2);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -99,8 +105,8 @@ namespace CarlAttack
                 return;
             }
 
-            // retire 5 point de vie
-            _health -= 5;
+            // retire 10 point de vie
+            _health -= 10;
 
             // si la vie est plus petite ou égal à 0
             if (_health <= 0)

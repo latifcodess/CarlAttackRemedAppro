@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CarlAttack")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f24dcefbfa5e09a1b15db9d4ed1dfdbcc714724")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7746b4c68de40af1ce8720a137d9b66142cba9e2")]
 [assembly: System.Reflection.AssemblyProductAttribute("CarlAttack")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CarlAttack")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
