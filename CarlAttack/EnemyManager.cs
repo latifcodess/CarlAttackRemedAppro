@@ -34,6 +34,8 @@ namespace CarlAttack
         /// Intervale de spawn
         /// </summary>
         private float _spawnInterval = 0.5f;
+        private int _nextBossKill = 50;
+        private int _bossStep = 100;
 
         private Boss _boss;
         private bool _bossSpawned = false;
@@ -118,6 +120,7 @@ namespace CarlAttack
                 {
                     // boss devient null
                     _boss = null;
+                    _bossSpawned = false;
                 }
             }
 
@@ -147,10 +150,13 @@ namespace CarlAttack
             _kills++;
 
             // si le nombre de kills est égal à 20 et que le boss n'est pas spawn
-            if (_kills == 50 && !_bossSpawned)
+            if (_kills >= _nextBossKill && !_bossSpawned)
             {
                 // faire spawn le boss
                 SpawnBoss();
+
+                _nextBossKill += _bossStep;
+                _bossStep += 50;
             }
         }
 
