@@ -121,9 +121,9 @@ namespace CarlAttack
                     // boss devient null
                     _boss = null;
                     _bossSpawned = false;
+                    _boss.Health += 100;
                 }
             }
-
         }
 
         /// <summary>

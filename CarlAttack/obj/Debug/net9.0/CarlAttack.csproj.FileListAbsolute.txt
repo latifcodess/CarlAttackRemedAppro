@@ -32,3 +32,4 @@ C:\Users\pl84wyk\Documents\Github\CarlAttackRemedAppro\CarlAttack\obj\Debug\net9
 C:\Users\pl84wyk\Documents\Github\CarlAttackRemedAppro\CarlAttack\obj\Debug\net9.0\ref\CarlAttack.dll
 C:\Users\pl84wyk\Documents\Github\CarlAttackRemedAppro\CarlAttack\bin\Debug\net9.0\Content\boss.xnb
 C:\Users\pl84wyk\Documents\Github\CarlAttackRemedAppro\CarlAttack\bin\Debug\net9.0\Content\scoreFont.xnb
+C:\Users\pl84wyk\Documents\Github\CarlAttackRemedAppro\CarlAttack\bin\Debug\net9.0\Content\bossFont.xnb

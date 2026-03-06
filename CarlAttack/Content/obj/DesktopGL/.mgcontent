@@ -5,6 +5,7 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/pl84wyk/Documents/Github/CarlAttackRemedAppro/CarlAttack/Content/boss.png</File>
+    <File>C:/Users/pl84wyk/Documents/Github/CarlAttackRemedAppro/CarlAttack/Content/bossFont.spritefont</File>
     <File>C:/Users/pl84wyk/Documents/Github/CarlAttackRemedAppro/CarlAttack/Content/burger.png</File>
     <File>C:/Users/pl84wyk/Documents/Github/CarlAttackRemedAppro/CarlAttack/Content/carl.JPG</File>
     <File>C:/Users/pl84wyk/Documents/Github/CarlAttackRemedAppro/CarlAttack/Content/dumbbell.png</File>
@@ -14,6 +15,7 @@
     <File>C:/Users/pl84wyk/Documents/Github/CarlAttackRemedAppro/CarlAttack/Content/scoreFont.spritefont</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

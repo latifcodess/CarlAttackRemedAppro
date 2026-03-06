@@ -25,6 +25,13 @@
 /processorParam:TextureFormat=Color
 /build:boss.png
 
+#begin bossFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:bossFont.spritefont
+
 #begin burger.png
 /importer:TextureImporter
 /processor:TextureProcessor
